@@ -5,3 +5,22 @@
 .banner .nav a {
   @apply inline-block px-4 py-2 border-none text-black  ;
 }
+
+.search-modal {
+  @apply absolute w-full h-auto px-10;
+
+  background: #525ddcdd;
+  height: 0;
+  bottom: 100vh;
+  transition: all 1s;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.search-modal.search-is-active {
+  @apply h-screen;
+
+  top: 0;
+  opacity: 1;
+  transition: all 1s;
+}
