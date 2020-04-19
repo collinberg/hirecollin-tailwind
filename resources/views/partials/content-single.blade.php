@@ -1,8 +1,11 @@
-<article @php post_class() @endphp>
-  <header>
-    <h1 class="entry-title">{!! get_the_title() !!}</h1>
+<section class='h-3/4 p-5 bg-grey flex justify-center align-center flex-col-reverse antialiased shadow-inner' style="background-color: #333; background-image: url('{!! $featured_image_background !!}'); background-size: cover; background-position: center center;">
+  <header class='text-white text-center'>
+    <h1 class="entry-title text-5xl">{!! get_the_title() !!}</h1>
     @include('partials/entry-meta')
   </header>
+</section>
+<article @php post_class('py-5') @endphp>
+
   <div class="entry-content">
     @php the_content() @endphp
   </div>

@@ -1,0 +1,38 @@
+.entry-content {
+  line-height: 1.5;
+}
+
+.entry-content > * {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.25em;
+}
+
+.entry-content > *:first-child {
+  margin-top: 0;
+}
+
+.entry-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.alignnone,
+.aligncenter,
+.alignleft,
+.alignright,
+.alignwide {
+  margin-top: 4rem;
+  margin-right: auto;
+  margin-bottom: 4rem;
+  margin-left: auto;
+}
+
+.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
+  @apply px-5;
+}
+
+@screen lg {
+  .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
+    @apply w-1/2 mx-auto;
+  }
+}
