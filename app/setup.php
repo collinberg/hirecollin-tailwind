@@ -72,6 +72,20 @@ add_action('after_setup_theme', function () {
      * @see resources/assets/styles/layouts/_tinymce.scss
      */
     add_editor_style(asset_path('styles/main.css'));
+
+    /**
+     * Enables Block styles
+     * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/
+     */
+     add_theme_support( 'wp-block-styles' );
+     add_theme_support( 'align-wide' );
+
+     add_theme_support('custom-background',
+       array(
+         'default-color' => 'f5efe0',
+       )
+     );
+
 }, 20);
 
 /**
