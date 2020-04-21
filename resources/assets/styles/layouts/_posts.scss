@@ -1,5 +1,9 @@
 .entry-content {
   line-height: 1.5;
+
+  h2 {
+    @apply text-4xl mb-2;
+  }
 }
 
 .entry-content > * {
