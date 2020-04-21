@@ -6,21 +6,134 @@
   @apply inline-block px-4 py-2 border-none text-black  ;
 }
 
+#searchToggle {
+  order: -1;
+
+  &:focus {
+    @apply outline-none;
+  }
+
+  svg {
+    transition: all 0.4s;
+  }
+
+  &:hover svg {
+    fill: $brand-primary;
+  }
+}
+
 .search-modal {
   @apply absolute w-full h-auto px-10;
 
-  background: #525ddcdd;
+  background: #333;
   height: 0;
   bottom: 100vh;
-  transition: all 1s;
+  transition: all 0.4s;
   overflow: hidden;
   opacity: 0;
+
+  //Delay Form showing up for just a smidge
+  &.bounceOutUp {
+    animation-delay: 0.5s;
+  }
 }
 
 .search-modal.search-is-active {
   @apply h-screen;
 
-  top: 0;
+  bottom: 0;
   opacity: 1;
-  transition: all 1s;
+}
+
+#menuToggle {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+
+  span {
+    background: #333;
+    width: 26px;
+    height: 2px;
+    display: block;
+    margin-bottom: 4px;
+    margin-left: 2px;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: " ";
+      display: block;
+      background: #333;
+      width: 26px;
+      height: 2px;
+      position: absolute;
+      transition: all 0.4s;
+    }
+
+    &::before {
+      top: -7px;
+    }
+
+    &::after {
+      top: 7px;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.open {
+    span {
+      background: none;
+
+      &::before {
+        top: 2px;
+        transform: rotate(45deg);
+        background: $brand-primary;
+      }
+
+      &::after {
+        top: 2px;
+        transform: rotate(-45deg);
+        background: $brand-primary;
+      }
+    }
+  }
+}
+
+#mobileMenu {
+  @apply pt-24 px-3 fixed;
+
+  transform: translateX(100%);
+  background: #333;
+  width: 120%;
+  height: 100vh;
+  color: white;
+  top: 0;
+  left: 0;
+
+  &.bounceOutRight {
+    animation-delay: 0.5s;
+  }
+
+  &.open {
+    transform: translateX(0%);
+  }
+
+  .nav {
+    @apply p-0 m-0;
+
+    list-style: none;
+  }
+
+  a {
+    @apply text-2xl text-white mb-3 block;
+  }
+}
+
+@screen lg {
+  #searchToggle {
+    order: initial;
+  }
 }
