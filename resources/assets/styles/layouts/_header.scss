@@ -28,13 +28,12 @@
   background: #333;
   height: 0;
   bottom: 100vh;
-  transition: all 0.4s;
   overflow: hidden;
   opacity: 0;
 
   //Delay Form showing up for just a smidge
   &.bounceOutUp {
-    animation-delay: 0.5s;
+    transition-delay: 0.5s;
   }
 }
 
@@ -43,6 +42,7 @@
 
   bottom: 0;
   opacity: 1;
+  transition: all 0.5s;
 }
 
 #menuToggle {
