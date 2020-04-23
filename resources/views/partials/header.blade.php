@@ -1,4 +1,4 @@
-<header class="banner fixed w-full z-30 top-0 bg-white">
+<header class="banner fixed w-full top-0 lg:bg-white">
   <div class="w-full container mx-auto flex flex-row items-center justify-between mt-0 py-2">
     <div class='pl-4 flex items-center'>
       <a class="brand toggleColour text-black text-bold no-underline hover:no-underline font-bold text-2xl lg:text-4xl hover:no-decoration" href="{{ home_url('/') }}">
@@ -25,15 +25,27 @@
     </button>
   </div>
 </header>
+<!-- Mobile Menu -->
+<section id="mobileMenu" class='animated z-40'>
+  <i class="menu-background top"></i>
+  <i class="menu-background middle"></i>
+  <i class="menu-background bottom"></i>
+  <div class='m-menu-wrap w-full h-full flex flex-col'>
+  @if (has_nav_menu('primary_navigation'))
+    {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}
+  @endif
+  <nav class='social-nav p-0 w-full flex justify-center py-5 relative justify-between'>
+    <a href="" class='text-white mx-4 text-3xl'><i class="fab fa-twitter"></i></a>
+    <a href="" class='text-white mx-4 text-3xl'><i class="fab fa-instagram"></i></a>
+    <a href="" class='text-white mx-4 text-3xl'><i class="fab fa-linkedin"></i></a>
+    <a href="" class='text-white mx-4 text-3xl'><i class="fab fa-github"></i></a>
+    <a href="" class='text-white mx-4 text-3xl'><i class="fab fa-codepen"></i></a>
+  </nav>
+</div>
+</section>
 <!-- Search Bar -->
-<div class='search-modal flex flex-wrap justify-center flex-col'>
+<div class='search-modal flex flex-wrap justify-center flex-col z-50'>
   <div class='search-wrap'>
     @include('partials.searchform')
   </div>
 </div>
-<!-- Mobile Menu -->
-<section id="mobileMenu" class='animated'>
-  @if (has_nav_menu('primary_navigation'))
-    {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}
-  @endif
-</section>

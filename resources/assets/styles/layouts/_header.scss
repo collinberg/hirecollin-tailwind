@@ -1,3 +1,7 @@
+.banner {
+  z-index: 1000;
+}
+
 .banner .nav {
   @apply list-reset flex flex-wrap;
 }
@@ -15,10 +19,6 @@
 
   svg {
     transition: all 0.4s;
-  }
-
-  &:hover svg {
-    fill: $brand-primary;
   }
 }
 
@@ -83,57 +83,184 @@
     outline: none;
   }
 
-  &.open {
-    span {
-      background: none;
+  &.open span {
+    background: none;
 
-      &::before {
-        top: 2px;
-        transform: rotate(45deg);
-        background: $brand-primary;
-      }
+    &::before {
+      top: 2px;
+      transform: rotate(45deg);
+      background: white;
+    }
 
-      &::after {
-        top: 2px;
-        transform: rotate(-45deg);
-        background: $brand-primary;
-      }
+    &::after {
+      top: 2px;
+      transform: rotate(-45deg);
+      background: white;
     }
   }
 }
 
 #mobileMenu {
-  @apply pt-24 px-3 fixed;
-
-  transform: translateX(100%);
-  background: #333;
-  width: 120%;
-  height: 100vh;
-  color: white;
-  top: 0;
+  overflow: hidden;
+  width: 100vw;
+  position: fixed;
   left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: -90;
+  transition: z-index 0.5s 2s;
 
-  &.bounceOutRight {
-    animation-delay: 0.5s;
+  .m-menu-wrap {
+    visibility: hidden;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    z-index: 99999;
+
+    .nav {
+      @apply flex-grow flex justify-center flex-col items-center p-0;
+
+      list-style: none;
+
+      a {
+        @apply text-2xl text-white mb-3;
+      }
+    }
+
+    li {
+      opacity: 0;
+      margin-bottom: 5px;
+      transform: translateX(20px);
+      transition: all 0.3s;
+
+      $time-offset-close: 0;
+
+      @for $i from 5 through 1 {
+        &:nth-child(#{$i}) {
+          $time-offset-close: $time-offset-close + 0.1;
+
+          transition-delay: #{$time-offset-close}s;
+        }
+      }
+    }
+  }
+
+  .menu-background {
+    visibility: hidden;
+    width: 300%;
+    height: 120vw;
+    position: absolute;
+    left: -130%;
+    background: $brand-primary;
+    transition: transform 1s 1.25s, visibility 0.5s 2s;
+
+    &.top {
+      transform: rotate(-45deg) translateY(-150%);
+    }
+
+    &.middle {
+      transform: rotate(-45deg) translateY(50%) scaleY(0);
+    }
+
+    &.bottom {
+      transform: rotate(-45deg) translateY(250%);
+    }
+  }
+
+  .social-nav {
+    opacity: 0;
+    transition: opacity 0.4s;
   }
 
   &.open {
-    transform: translateX(0%);
+    visibility: visible;
+    z-index: 90;
+    transition: transform 1s;
+
+    .menu-background {
+      //Open Animation
+      transition: transform 0.5s;
+    }
+
+    .top {
+      transform: rotate(-45deg) translateY(-49%);
+      visibility: visible;
+    }
+
+    .middle {
+      transform: rotate(-45deg) translateY(50%) scaleY(1);
+      visibility: visible;
+    }
+
+    .bottom {
+      transform: rotate(-45deg) translateY(149%);
+      visibility: visible;
+    }
+
+    .m-menu-wrap {
+      visibility: visible;
+
+      li {
+        opacity: 1;
+        transform: translateX(0);
+        backface-visibility: hidden;
+
+        $time-offset-open: 1;
+
+        @for $i from 1 through 5 {
+          &:nth-child(#{$i}) {
+
+            $time-offset-open: $time-offset-open + 0.1;
+
+            transition-delay: #{$time-offset-open}s;
+          }
+        }
+      }
+    }
+
+    .social-nav {
+      opacity: 1;
+      transition: opacity 0.8s 1.5s;
+    }
+  }
+}
+
+//Body Class
+.search-open {
+  overflow: hidden;
+
+  .svg-icon {
+    fill: $brand-primary;
   }
 
-  .nav {
-    @apply p-0 m-0;
-
-    list-style: none;
+  .brand {
+    color: $brand-primary;
   }
 
-  a {
-    @apply text-2xl text-white mb-3 block;
+  #menuToggle span,
+  #menuToggle span::before,
+  #menuToggle span::after {
+    background: $brand-primary;
+  }
+}
+
+//Body Class
+.mobile-menu-open {
+  .svg-icon {
+    fill: white;
+  }
+
+  .brand {
+    color: white;
   }
 }
 
 @screen lg {
   #searchToggle {
     order: initial;
+
+    &:hover svg {
+      fill: $brand-primary;
+    }
   }
 }
