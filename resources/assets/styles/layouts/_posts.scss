@@ -1,3 +1,9 @@
+.header-img {
+  @apply h-3/4 p-5 bg-grey flex justify-center flex-col-reverse antialiased;
+
+  box-shadow: 0 3px 10px #ccc, 0 -350px 250px rgba(0, 0, 0, 0.5) inset;
+}
+
 .entry-content {
   line-height: 1.5;
 

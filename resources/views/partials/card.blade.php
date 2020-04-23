@@ -1,4 +1,4 @@
-<div class='w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink'>
+<div class='w-full md:w-1/3 px-3 lg:p-6 flex flex-col flex-grow flex-shrink'>
   <div class='flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg'>
     <a href="{!! $home_item['permalink'] !!}" title="" class='flex flex-wrap no-underline hover:no-underline border-none'>
       <img src="{!! $home_item['thumbnail'] !!}" class="h-full w-full rounded-t pb-6">
