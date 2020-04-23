@@ -40,6 +40,7 @@
 @import "components/comments";
 @import "components/forms";
 @import "components/wp-classes";
+@import "layouts/animate";
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";
@@ -47,7 +48,7 @@
 @import "layouts/posts";
 @import "layouts/tinymce";
 @import "layouts/home";
-@import "layouts/animate";
+@import "layouts/dark";
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your
