@@ -18,6 +18,7 @@ class FrontPage extends Controller
     return array_map(function ($post) {
         return [
             'date'      => get_the_time('F, Y', $post->ID),
+            'categories'=> wp_get_post_categories($post->ID),
             'content'   => get_the_excerpt( $post->ID ),
             'title'     => get_the_title( $post->ID ),
             'permalink' => get_the_permalink( $post->ID ),
