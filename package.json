@@ -80,7 +80,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "particles.js": "^2.0.0"
   }
 }
