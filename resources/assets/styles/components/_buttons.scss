@@ -1,5 +1,30 @@
 .btn {
-  @apply bg-primary rounded my-3 px-4 py-3 text-white leading-none;
+  @apply mx-auto font-bold py-4 px-8 shadow-lg uppercase font-bold;
 
   transition: 0.2s ease;
+
+  .svg-inline--fa {
+    transition: all 0.4s;
+  }
+
+  &:hover .svg-inline--fa {
+    margin-left: 5px;
+  }
+}
+
+.btn-primary {
+  @apply bg-primary text-white;
+
+  &:hover {
+    background: darken($brand-primary, 10%);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.btn-white {
+  @apply bg-white;
+
+  &:hover {
+    background: darken(#fff, 10%);
+  }
 }
