@@ -12,3 +12,30 @@
   top: 0;
   bottom: 0;
 }
+
+#aboutImage {
+  position: relative;
+
+  img {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 -4px 16px 8px rgba(0, 0, 0, 0.05);
+  }
+}
+
+#aboutContent {
+  position: relative;
+}
+
+@screen lg {
+  #aboutContent::before {
+    z-index: 9999;
+    position: absolute;
+    content: "";
+    right: 5%;
+    left: 32%;
+    top: 9%;
+    bottom: 47%;
+    background: blueviolet;
+    mix-blend-mode: color;
+    transform: skew(-10deg, 6deg);
+  }
+}
