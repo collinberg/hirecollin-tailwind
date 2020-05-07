@@ -260,6 +260,28 @@
 }
 
 @screen lg {
+  .brand {
+    position: relative;
+    color: blueviolet;
+
+    &::before {
+      content: attr(data-text);
+      overflow: hidden;
+      position: absolute;
+      color: $brand-primary;
+      top: 0;
+      left: 0;
+      clip-path: polygon(0 0, 60% 0%, 40% 100%, 0% 100%);
+      transition: all 0.4s;
+    }
+
+    &:hover {
+      &::before {
+        clip-path: polygon(0 0, 280% 0%, 40% 100%, 0% 100%);
+      }
+    }
+  }
+
   #searchToggle {
     order: initial;
 
