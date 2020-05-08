@@ -2,16 +2,21 @@
 
 @section('content')
   @include('partials.page-header')
-<section class='container pt-5 lg:pt-10'>
-  @if (!have_posts())
-    <div class="alert alert-warning">
-      {{ __('Sorry, no results were found.', 'sage') }}
-    </div>
-    {!! get_search_form(false) !!}
-  @endif
-  @while (have_posts()) @php the_post() @endphp
-    @include('partials.content-'.get_post_type())
-  @endwhile
+<section class='container pt-5 lg:pt-10 flex'>
+  <main class='md:w-3/4 md:pr-6'>
+    @if (!have_posts())
+      <div class="alert alert-warning">
+        {{ __('Sorry, no results were found.', 'sage') }}
+      </div>
+      {!! get_search_form(false) !!}
+    @endif
+    @while (have_posts()) @php the_post() @endphp
+      @include('partials.content-'.get_post_type())
+    @endwhile
+  </main>
+  <aside class="sidebar md:w-1/4 md:pl-6">
+    @include('partials.sidebar')
+  </aside>
 </section>
   {!! get_the_posts_navigation() !!}
 @endsection

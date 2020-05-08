@@ -42,7 +42,7 @@
 }
 
 article.post {
-  @apply p-5 bg-grey-light mb-5;
+  @apply bg-white mb-5;
 }
 
 @screen lg {
@@ -51,6 +51,6 @@ article.post {
   }
 
   article.post {
-    @apply p-8 bg-grey-light mb-5;
+    @apply mb-10;
   }
 }
