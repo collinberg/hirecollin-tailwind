@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
-@include('partials.page-header')
 
 @section('content')
+
+@include('partials.page-header')
 <div class="wrap container pt-16" role="document">
   <div class="content">
     <main class="main">
