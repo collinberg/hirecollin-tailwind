@@ -1,4 +1,4 @@
-<header class="banner fixed w-full top-0 lg:bg-white lg:shadow">
+<header class="banner fixed lg:relative w-full top-0 lg:bg-primary">
   <div class="w-full container mx-auto flex flex-row items-center justify-between mt-0 py-2">
     <div class='pl-4 flex items-center'>
       <a class="brand toggleColour text-black text-bold no-underline hover:no-underline font-bold text-2xl lg:text-4xl border-none" href="{{ home_url('/') }}" data-text="{{ get_bloginfo('name', 'display') }}">
