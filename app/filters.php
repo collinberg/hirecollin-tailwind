@@ -34,7 +34,7 @@ add_filter('excerpt_more', function () {
 });
 
 add_filter( 'excerpt_length', function($length) {
-    return 20;
+    return 40;
 } );
 
 /**

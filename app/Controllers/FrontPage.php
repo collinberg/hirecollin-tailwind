@@ -10,7 +10,7 @@ class FrontPage extends Controller
   public function homeFeed()
   {
     $args= [
-      'posts_per_page'  => 3,
+      'posts_per_page'  => 2,
     ];
 
     $latest_posts = get_posts( $args );
