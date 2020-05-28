@@ -18,5 +18,8 @@
     @include('partials.sidebar')
   </aside>
 </section>
+<div class='container pb-10'>
   {!! get_the_posts_navigation() !!}
+</div>
+
 @endsection
