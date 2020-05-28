@@ -92,7 +92,7 @@
 			</div>
 			<div class="w-full md:w-1/2 md:p-6 order-first md:order-none pb-10">
           <div id="aboutImage">
-			         <img src="@asset('images/collin.jpg')" class='p-3 mx-auto lg:w-2/3 shadow-lg bg-white'>
+			         <img src="@asset('images/collin.jpg')" class='p-3 mx-auto lg:w-2/3 shadow-lg bg-white' alt="Personal Picture of me, Collin Berg">
          </div>
       </div>
 		</div>
