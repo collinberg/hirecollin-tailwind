@@ -4,7 +4,8 @@
   box-shadow: 0 3px 10px #ccc, 0 -350px 250px rgba(0, 0, 0, 0.5) inset;
 }
 
-.entry-content {
+.entry-content,
+.page-content {
   line-height: 1.5;
 
   h2 {
@@ -41,8 +42,20 @@
   @apply px-5;
 }
 
-article.post {
-  @apply bg-white mb-5;
+.nav-previous {
+  a {
+    @apply shadow-lg font-bold;
+
+    background: $brand-primary;
+    padding: 12px 25px;
+    color: white;
+    text-transform: uppercase;
+    transition: all 0.4s;
+
+    &:hover {
+      background: darken($brand-primary, 10%);
+    }
+  }
 }
 
 @screen lg {
@@ -51,6 +64,6 @@ article.post {
   }
 
   article.post {
-    @apply mb-10;
+    @apply mb-16;
   }
 }

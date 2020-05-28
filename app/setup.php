@@ -12,7 +12,7 @@ use Roots\Sage\Template\BladeProvider;
  */
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
-    wp_enqueue_style('OpenSans' ,'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:300,400,800&display=swap', false, null);
+    wp_enqueue_style('OpenSans' ,'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:300,400,600,800&display=swap', false, null);
 
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
 
@@ -187,3 +187,13 @@ function remove_protected_text() {
   return __('%s');
 }
 add_filter( 'protected_title_format',  __NAMESPACE__ .'\\remove_protected_text' );
+
+add_filter('init', function () {
+    if (is_admin()) {
+        return;
+    }
+    wp_deregister_script( 'jquery-core' );
+    wp_register_script( 'jquery-core', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1' );
+    wp_deregister_script( 'jquery-migrate' );
+    wp_register_script( 'jquery-migrate', "https://code.jquery.com/jquery-migrate-3.0.0.min.js", array(), '3.0.0' );
+});
