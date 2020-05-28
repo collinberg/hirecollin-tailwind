@@ -7,10 +7,10 @@
 }
 
 .banner .nav a {
-  @apply inline-block px-4 py-2 border-none text-black font-bold font-display text-xl transition duration-500;
+  @apply inline-block px-4 py-2 border-none text-white font-bold font-display text-xl transition duration-500;
 
   &:hover {
-    @apply text-white;
+    @apply text-black;
   }
 }
 
@@ -285,12 +285,22 @@
   #searchToggle {
     order: initial;
 
+    svg {
+      fill: white;
+    }
+
     &:hover svg {
-      fill: $brand-primary;
+      fill: #454545;
     }
   }
 
   #mobileMenu {
     display: none;
+  }
+
+  body.single {
+    .banner .nav a:hover {
+      @apply text-primary;
+    }
   }
 }
