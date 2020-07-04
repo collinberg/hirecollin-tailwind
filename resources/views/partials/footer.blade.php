@@ -4,13 +4,12 @@
       <p class="text-white text-2xl font-bold m-0 leading-none">&copy; @php echo Date("Y") @endphp  <a href="{{ home_url('/') }}" class='text-white'>{{ get_bloginfo('name', 'display') }}</a></p>
       <div class="pl-5 flex flex-wrap justify-end flex-1">
         <nav>
-          <a href="" class='text-white mr-5 text-3xl'><i class="fab fa-twitter"></i></a>
-          <a href="" class='text-white mr-5 text-3xl'><i class="fab fa-instagram"></i></a>
-          <a href="" class='text-white mr-5 text-3xl'><i class="fab fa-linkedin"></i></a>
-          <a href="" class='text-white mr-5 text-3xl'><i class="fab fa-github"></i></a>
-          <a href="" class='text-white mr-5 text-3xl'><i class="fab fa-codepen"></i></a>
+          <a href="http://twitter.com/collinaberg" class='text-white mr-5 text-3xl border-none hover:text-primary transition duration-400' rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+          <a href="http://instagram.com/cabber" class='text-white mr-5 text-3xl border-none hover:text-primary transition duration-400' rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/collinberg/" class='text-white mr-5 text-3xl border-none hover:text-primary transition duration-400' rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/collinberg" class='text-white mr-5 text-3xl border-none hover:text-primary transition duration-400' rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+          <a href="https://codepen.io/collinberg/" class='text-white mr-5 text-3xl border-none hover:text-primary transition duration-400' rel="noopener noreferrer"><i class="fab fa-codepen"></i></a>
         </nav>
-
       </div>
     </div>
   </div>
