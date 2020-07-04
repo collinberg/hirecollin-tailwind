@@ -25,6 +25,24 @@
   position: relative;
 }
 
+.card-wide {
+  @apply w-full px-3 flex flex-col flex-grow flex-shrink transition mb-5;
+
+  transition: all 0.4s;
+
+  a h3,
+  .category {
+    color: #333;
+  }
+
+  &:hover {
+    a h3,
+    .category {
+      color: $brand-primary;
+    }
+  }
+}
+
 @screen lg {
   #aboutContent::before {
     z-index: 9999;
@@ -37,5 +55,11 @@
     background: blueviolet;
     mix-blend-mode: color;
     transform: skew(-10deg, 6deg);
+  }
+
+  .card-wide {
+    @apply p-6;
+
+    width: 50%;
   }
 }

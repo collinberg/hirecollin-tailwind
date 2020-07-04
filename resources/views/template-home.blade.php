@@ -13,7 +13,7 @@
       <div class="w-full md:w-1/2 lg:p-6">
         <h1 class='my-4 text-5xl font-bold leading-tight text-white mt-0'>Data Driven Design</h1>
         <span class='text-white text-2xl block font-light'>I'm a web designer and developer that likes to create unique designs that solve problems.</span>
-        <button class='btn btn-white lg:mx-0 my-6'>Learn About Me <i class="fas fa-chevron-right"></i></button>
+        <a href="/about" class='btn btn-white lg:mx-0 my-6 inline-block'>Learn About Me <i class="fas fa-chevron-right"></i></a>
       </div>
       <div class="w-full md:w-1/2 lg:p-6 md:block hidden">
         <figure>
@@ -84,7 +84,7 @@
 	<div class="container max-w-5xl mx-auto m-8">
 		<div class="flex flex-wrap">
 			<div class="md:w-1/2 md:p-6 flex flex-col justify-center relative">
-				<h3 class="text-4xl text-gray-800 font-bold leading-none mb-5 text-primary">Hey, I’m Collin. I'm a developer and Digital Consultant in the New York City Area.</h3>
+				<h2 class="text-4xl text-gray-800 font-bold leading-none mb-5 text-primary">Hey, I’m Collin. I'm a developer and Digital Consultant in the New York City Area.</h2>
 				<p class="text-gray-600 mb-8 text-lg">I'm passionate about solving problems through structured design. I’m obsessed with creating websites that are quick and feel natural to navigate.</p>
         <div>
           <a href="/about" class="btn btn-primary">This is Me <i class='fas fa-chevron-right'></i></a>
