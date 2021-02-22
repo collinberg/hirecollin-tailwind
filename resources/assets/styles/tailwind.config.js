@@ -69,7 +69,7 @@ module.exports = {
         'monospace',
       ],
       'display': [
-        'Open Sans Condensed',
+        'PT Serif',
         '-apple-system',
         'Segoe UI',
         'Roboto',
@@ -88,15 +88,11 @@ module.exports = {
       '5xl': '3rem',      // 48px
     },
     fontWeight: {
-      'hairline': 100,
-      'thin': 200,
       'light': 300,
       'normal': 400,
       'medium': 500,
       'semibold': 600,
-      'bold': 700,
-      'extrabold': 800,
-      'black': 900,
+      'bold': 800,
     },
     lineHeight: {
       'none': 1,

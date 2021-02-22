@@ -8,4 +8,14 @@
       padding-bottom: 2px;
     }
   }
+
+  .cat-item {
+    @apply bg-grey-lightest p-2 my-1 mr-2;
+
+    display: inline-block;
+
+    a {
+      @apply text-sm;
+    }
+  }
 }

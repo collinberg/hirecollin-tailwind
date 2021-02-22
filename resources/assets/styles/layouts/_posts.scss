@@ -1,26 +1,55 @@
-.header-img {
-  @apply h-3/4 p-5 bg-grey flex justify-center flex-col-reverse antialiased;
-
-  box-shadow: 0 3px 10px #ccc, 0 -350px 250px rgba(0, 0, 0, 0.5) inset;
-}
-
 .entry-content,
 .page-content {
   line-height: 1.5;
 
   h2 {
-    @apply text-4xl mb-2 font-bold;
+    @apply text-3xl mb-2;
+
+    a {
+      position: relative;
+
+      &::before {
+        content: "#";
+        opacity: 50%;
+        font-weight: bold;
+        transition: all 0.4s ease;
+        position: absolute;
+        left: -25px;
+      }
+
+      &:hover {
+        &::before {
+          opacity: 100%;
+          color: $brand-primary;
+        }
+      }
+    }
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  h5 {
+    @apply text-lg;
   }
 
   ul,
   ol {
     list-style: initial;
+    margin-left: 18px;
+    padding-left: 1em;
+    margin-bottom: 0.75rem;
   }
 }
 
 .entry-content > * {
-  margin-left: auto;
-  margin-right: auto;
+  // margin-left: auto;
+  // margin-right: auto;
   margin-bottom: 1.25em;
 }
 
@@ -37,9 +66,9 @@
 .alignleft,
 .alignright,
 .alignwide {
-  margin-top: 4rem;
+  margin-top: 3rem;
   margin-right: auto;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   margin-left: auto;
 }
 
@@ -47,18 +76,20 @@
   @apply px-5;
 }
 
-.nav-previous {
-  a {
-    @apply shadow-lg font-bold;
+.navigation .nav-links {
+  .nav-previous {
+    a {
+      @apply shadow-lg font-bold;
 
-    background: $brand-primary;
-    padding: 12px 25px;
-    color: white;
-    text-transform: uppercase;
-    transition: all 0.4s;
+      background: $brand-primary;
+      padding: 12px 25px;
+      color: white;
+      text-transform: uppercase;
+      transition: all 0.4s;
 
-    &:hover {
-      background: darken($brand-primary, 10%);
+      &:hover {
+        background: darken($brand-primary, 10%);
+      }
     }
   }
 }
@@ -66,9 +97,5 @@
 @screen lg {
   .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
     @apply w-1/2 mx-auto;
-  }
-
-  article.post {
-    @apply mb-16;
   }
 }
