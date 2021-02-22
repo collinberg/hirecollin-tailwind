@@ -6,7 +6,7 @@
 @include('partials.page-header')
 <div class="wrap container pt-16" role="document">
   <div class="content">
-    <main class="main">
+    <main class="main page-content">
   @while(have_posts()) @php the_post() @endphp
 
     @include('partials.content-page')

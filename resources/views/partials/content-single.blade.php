@@ -1,6 +1,6 @@
-<section class='header-img' style="background-color: #333; background-image: url('{!! $featured_image_background !!}'); background-size: cover; background-position: center center;">
-  <header class='text-white text-center'>
-    <h1 class="entry-title text-3xl lg:text-5xl lg:mx-auto lg:w-3/4">{!! get_the_title() !!}</h1>
+<section class='flex flex-col-reverse bg-primary text-white h-1/2 pb-5'>
+  <header class='container'>
+    <h1 class="entry-title text-3xl lg:text-5xl font-bold w-3/4">{!! get_the_title() !!}</h1>
     @include('partials/entry-meta')
   </header>
 </section>
