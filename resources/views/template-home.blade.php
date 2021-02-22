@@ -11,8 +11,8 @@
   <div class='container px-3 mx-auto h-screen flex align-center relative z-20'>
     <div class='flex flex-wrap flex-row items-start md:text-left items-center w-full'>
       <div class="w-full md:w-1/2 lg:p-6">
-        <h1 class='my-4 text-5xl font-bold leading-tight text-white mt-0'>Data Driven Design</h1>
-        <span class='text-white text-2xl block font-light'>I'm a web designer and developer that likes to create unique designs that solve problems.</span>
+        <h1 class='my-4 text-5xl font-bold leading-tight text-white mt-0'>Hello World</h1>
+        <span class='text-white text-2xl block font-light'>I'm a Collin, a web developer that likes to create unique designs that solve problems.</span>
         <a href="/about" class='btn btn-white lg:mx-0 my-6 inline-block'>Learn About Me <i class="fas fa-chevron-right"></i></a>
       </div>
       <div class="w-full md:w-1/2 lg:p-6 md:block hidden">
@@ -96,24 +96,17 @@
          </div>
       </div>
 		</div>
-
-
 	</div>
 </section>
 <section class='py-5 lg:py-10 bg-white'>
   <div class='container'>
     <h2 class='w-full my-2 text-5xl font-bold leading-tight text-center text-primary'>Latest Insights</h2>
     <div class='flex flex-wrap'>
-      @foreach($home_feed as $home_item)
+      @foreach($home_feed as $newsBlock)
             @include('partials.card')
       @endforeach
 
     </div>
   </div>
 </section>
-
-  @while(have_posts()) @php the_post() @endphp
-    @include('partials.content-page')
-  @endwhile
-
 @endsection
