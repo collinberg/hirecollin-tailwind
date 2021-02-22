@@ -12,7 +12,7 @@ use Roots\Sage\Template\BladeProvider;
  */
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
-    wp_enqueue_style('OpenSans' ,'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:300,400,600,800&display=swap', false, null);
+    wp_enqueue_style('OpenSans' ,'link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&family=PT+Serif:wght@700&display=swap', false, null);
 
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
 
@@ -197,3 +197,42 @@ add_filter('init', function () {
     wp_deregister_script( 'jquery-migrate' );
     wp_register_script( 'jquery-migrate', "https://code.jquery.com/jquery-migrate-3.3.1.min.js", array(), '3.3.1' );
 });
+// -------------------------------------------------------------
+// Register Custom Theme Block Category: Sceniber
+// -------------------------------------------------------------
+add_filter( 'block_categories', __NAMESPACE__ .'\\sceniber_block_categories', 10, 2 );
+function sceniber_block_categories( $categories, $post ) {
+    if ( $post->post_type !== 'page' ) {
+        return $categories;
+    }
+    return array_merge(
+        $categories,
+        array(
+            array(
+                'slug' => 'sceniber',
+                'title' => __( 'Sceniber', 'sage' ),
+                'icon'  => 'cover-image',
+            ),
+        )
+    );
+}
+
+// -------------------------------------------------------------
+// Anrchors on H2
+// -------------------------------------------------------------
+function anchor_content_h2($content) {
+
+    // Pattern that we want to match
+    $pattern = '<h2>(.*?)</h2>';
+
+    // now run the pattern and callback function on content
+    // and process it through a function that replaces the title with an id
+    $content = preg_replace_callback('/<h2>(.*?)<\/h2>/', function ($matches) {
+                $title = $matches[1];
+                $slug = sanitize_title_with_dashes($title);
+                return '<h2 id="' . $slug . '" style="scroll-margin: 50px 0 0 10px;"><a href="#'. $slug .'" class="no-underline border-none text-grey-darkest">' . $title . '</a></h2>';
+            }, $content);
+    return $content;
+}
+
+add_filter('the_content', __NAMESPACE__ .'\\anchor_content_h2');
