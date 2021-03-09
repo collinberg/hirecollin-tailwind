@@ -4,9 +4,12 @@
     @include('partials/entry-meta')
   </header>
 </section>
-<article @php post_class('py-5') @endphp>
-
-  <div class="entry-content">
-    @php the_content() @endphp
+<section class='container'>
+  <div class='w-full lg:w-3/4'>
+    <article @php post_class('py-5 lg:pr-10') @endphp>
+      <div class="entry-content">
+        @php the_content() @endphp
+      </div>
+    </article>
   </div>
-</article>
+</section>

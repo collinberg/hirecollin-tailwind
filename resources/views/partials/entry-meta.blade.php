@@ -9,11 +9,11 @@
 </div>
 @else
 <div class='entry-meta block my-2'>
-  <time class="updated mb-3 text-grey-darker uppercase pr-3 font-semibold text-xs" datetime="{{ get_post_time('c', true) }}"><i class="fas fa-calendar mr-1 text-primary"></i> {{ get_the_date() }}</time>
+  <time class="updated mb-3 text-grey-darker dark:text-grey-light uppercase pr-3 font-semibold text-xs" datetime="{{ get_post_time('c', true) }}"><i class="fas fa-calendar mr-1 text-primary"></i> {{ get_the_date() }}</time>
     @php $catListing = wp_get_post_categories($post->ID) @endphp
   @foreach($catListing as $cat)
     @php $homecat = get_category($cat) @endphp
-    <span class='text-grey-darker text-xs md:text-sm font-semibold'><i class="fas fa-tags mr-1 text-primary"></i>{{ $homecat->name }}</span>
+    <span class='text-grey-darker dark:text-grey-light text-xs md:text-sm font-semibold'><i class="fas fa-tags mr-1 text-primary"></i>{{ $homecat->name }}</span>
   @endforeach
 </div>
 @endif
