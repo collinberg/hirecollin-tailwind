@@ -6,6 +6,10 @@
   }
 }
 
+#homeLanding {
+  background: conic-gradient(from -270deg at 110% 50%, cadetblue, darkgreen);
+}
+
 #particles-js {
   position: absolute;
   width: 100%;
@@ -33,6 +37,7 @@
   a h3,
   .category {
     color: #333;
+    transition: all 0.4s;
   }
 
   &:hover {
@@ -46,6 +51,7 @@
 @screen lg {
   #aboutContent::before {
     z-index: 9999;
+    display: none;
     position: absolute;
     content: "";
     right: 5%;
@@ -61,5 +67,20 @@
     @apply p-6;
 
     width: 50%;
+  }
+}
+
+@screen dark {
+  #digitize {
+    path {
+      fill: #22292f;
+    }
+  }
+
+  .card-wide {
+    a h3,
+    .category {
+      @apply text-grey-lighter;
+    }
   }
 }

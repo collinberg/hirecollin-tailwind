@@ -10,12 +10,35 @@
   }
 
   .cat-item {
-    @apply bg-grey-lightest p-2 my-1 mr-2;
+    @apply bg-grey-lightest px-2 py-1 my-1 mr-2;
 
     display: inline-block;
+    transition: all 0.4s ease;
 
     a {
-      @apply text-sm;
+      @apply text-sm border-none;
+
+      transition: all 0.4s ease;
+    }
+
+    &:hover {
+      @apply bg-primary;
+
+      a {
+        @apply text-white;
+      }
+    }
+  }
+}
+
+@screen dark {
+  .sidebar {
+    .cat-item {
+      @apply bg-grey-darkest;
+
+      a {
+        @apply text-grey-lightest;
+      }
     }
   }
 }

@@ -1,0 +1,6 @@
+.page-header {
+  @apply flex flex-col-reverse text-white pb-5;
+
+  background-color: $brand-primary;
+  background-image: conic-gradient(from -270deg at 110% 50%, cadetblue, darkgreen);
+}

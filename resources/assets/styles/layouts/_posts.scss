@@ -6,7 +6,7 @@
     @apply text-3xl mb-2;
 
     a {
-      position: relative;
+      position: static;
 
       &::before {
         content: "#";
@@ -72,10 +72,6 @@
   margin-left: auto;
 }
 
-.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
-  @apply px-5;
-}
-
 .navigation .nav-links {
   .nav-previous {
     a {
@@ -96,6 +92,15 @@
 
 @screen lg {
   .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
-    @apply w-1/2 mx-auto;
+    @apply mx-auto;
+  }
+
+  .entry-content,
+  .page-content {
+    h2 {
+      a {
+        position: relative;
+      }
+    }
   }
 }

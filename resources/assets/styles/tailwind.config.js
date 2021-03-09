@@ -17,7 +17,8 @@ Tailwind - The Utility-First CSS Framework
 // let defaultConfig = require('tailwindcss/defaultConfig')()
 
 let colors = {
-  'primary': '#525ddc',
+  'primary': '#3f8354', //'#0e7c7b',
+  'secondary' : '#ea5f6b',
 
   'transparent': 'transparent',
 
@@ -100,11 +101,6 @@ module.exports = {
       'normal': 1.5,
       'loose': 2,
     },
-    letterSpacing: {
-      'tight': '-0.05em',
-      'normal': '0',
-      'wide': '0.05em',
-    },
     textColor: colors,
     backgroundColor: colors,
     backgroundSize: {
@@ -117,7 +113,6 @@ module.exports = {
       '0': '0',
       '2': '2px',
       '4': '4px',
-      '8': '8px',
     },
     borderColor: global.Object.assign({ default: colors['grey-light'] }, colors),
     borderRadius: {
@@ -291,13 +286,7 @@ module.exports = {
           '3': '3',
           '4': '4',
           '5': '5',
-          '6': '6',
-          '7': '7',
-          '8': '8',
-          '9': '9',
           '10': '10',
-          '11': '11',
-          '12': '12',
         },
     fill: {
       'current': 'currentColor',
@@ -305,6 +294,13 @@ module.exports = {
     stroke: {
       'current': 'currentColor',
     },
+    extend: {
+      screens: {
+        'light': {'raw': '(prefers-color-scheme: light)' },
+        'dark': {'raw': '(prefers-color-scheme: dark)'},
+        // => @media (prefers-color-scheme: dark) { ... }
+      }
+    }
   },
   variants: {
     appearance: ['responsive'],
@@ -370,4 +366,20 @@ module.exports = {
     width: ['responsive'],
     zIndex: ['responsive'],
   },
+  plugins: [
+    function({ addBase, config }) {
+      addBase({
+        body: {
+          color: config("theme.colors.black"),
+          backgroundColor: config("theme.colors.white")
+        },
+        "@screen dark": {
+          body: {
+            color: config("theme.colors.white"),
+            backgroundColor: config("theme.colors.black")
+          }
+        }
+      });
+    }
+  ]
 }

@@ -135,7 +135,7 @@
       opacity: 0;
       margin-bottom: 5px;
       transform: translateX(20px);
-      transition: all 0.3s;
+      transition: all 0.3s ease;
 
       $time-offset-close: 0;
 
@@ -209,7 +209,7 @@
         transform: translateX(0);
         backface-visibility: hidden;
 
-        $time-offset-open: 1;
+        $time-offset-open: 0.5;
 
         @for $i from 1 through 5 {
           &:nth-child(#{$i}) {
@@ -296,11 +296,5 @@
 
   #mobileMenu {
     display: none;
-  }
-
-  body.single {
-    .banner .nav a:hover {
-      @apply text-primary;
-    }
   }
 }
