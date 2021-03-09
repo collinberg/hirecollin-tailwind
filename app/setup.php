@@ -230,7 +230,7 @@ function anchor_content_h2($content) {
     $content = preg_replace_callback('/<h2>(.*?)<\/h2>/', function ($matches) {
                 $title = $matches[1];
                 $slug = sanitize_title_with_dashes($title);
-                return '<h2 id="' . $slug . '" style="scroll-margin: 50px 0 0 10px;"><a href="#'. $slug .'" class="no-underline border-none text-grey-darkest">' . $title . '</a></h2>';
+                return '<h2 id="' . $slug . '" style="scroll-margin: 50px 0 0 10px;"><a href="#'. $slug .'" class="no-underline border-none text-grey-darkest dark:text-grey-light">' . $title . '</a></h2>';
             }, $content);
     return $content;
 }
