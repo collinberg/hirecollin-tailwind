@@ -49,19 +49,19 @@
 }
 
 @screen lg {
-  #aboutContent::before {
-    z-index: 9999;
-    display: none;
-    position: absolute;
-    content: "";
-    right: 5%;
-    left: 32%;
-    top: 9%;
-    bottom: 47%;
-    background: blueviolet;
-    mix-blend-mode: color;
-    transform: skew(-10deg, 6deg);
-  }
+  // #aboutContent::before {
+  //   z-index: 9999;
+  //   display: none;
+  //   position: absolute;
+  //   content: "";
+  //   right: 5%;
+  //   left: 32%;
+  //   top: 9%;
+  //   bottom: 47%;
+  //   background: blueviolet;
+  //   mix-blend-mode: color;
+  //   transform: skew(-10deg, 6deg);
+  // }
 
   .card-wide {
     @apply p-6;

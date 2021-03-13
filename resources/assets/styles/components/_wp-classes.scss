@@ -77,3 +77,9 @@
   clip: auto;
   white-space: normal;
 }
+
+@screen dark {
+  .wp-block-image figcaption {
+    @apply text-grey-lighter;
+  }
+}

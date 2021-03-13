@@ -298,3 +298,15 @@
     display: none;
   }
 }
+
+@screen dark {
+  #menuToggle span,
+  #menuToggle span::before,
+  #menuToggle span::after {
+    @apply bg-grey-lighter;
+  }
+
+  .search-icon {
+    fill: rgba(241, 245, 248, 1);
+  }
+}
