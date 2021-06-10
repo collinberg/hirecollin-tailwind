@@ -3,14 +3,14 @@
   line-height: 1.5;
 
   h2 {
-    @apply text-3xl mb-2;
+    @apply text-3xl mb-2 mt-8;
 
     a {
       position: static;
 
       &::before {
         content: "#";
-        opacity: 50%;
+        opacity: 0.5;
         font-weight: bold;
         transition: all 0.4s ease;
         position: absolute;
@@ -19,7 +19,7 @@
 
       &:hover {
         &::before {
-          opacity: 100%;
+          opacity: 1;
           color: $brand-primary;
         }
       }
@@ -84,7 +84,18 @@
       transition: all 0.4s;
 
       &:hover {
-        background: darken($brand-primary, 10%);
+        background: darken($secondary, 10%);
+      }
+    }
+  }
+}
+
+@screen md {
+  .entry-content,
+  .page-content {
+    h2 {
+      a {
+        position: relative;
       }
     }
   }
@@ -94,13 +105,21 @@
   .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
     @apply mx-auto;
   }
+}
 
+@screen dark {
   .entry-content,
   .page-content {
-    h2 {
-      a {
-        position: relative;
-      }
+    a {
+      @apply text-secondary;
+    }
+
+    h2 a {
+      @apply text-grey-light;
+    }
+
+    .wp-block-image img {
+      opacity: 0.5;
     }
   }
 }
