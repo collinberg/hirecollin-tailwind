@@ -1,7 +1,7 @@
 <header class="banner fixed lg:absolute w-full top-0 lg:bg-transparent">
   <div class="w-full container mx-auto flex flex-row items-center justify-between mt-0 py-2">
     <div class='pl-4 flex items-center'>
-      <a class="brand toggleColour text-black text-bold no-underline hover:no-underline font-bold text-2xl lg:text-4xl border-none" href="{{ home_url('/') }}" data-text="{{ get_bloginfo('name', 'display') }}">
+      <a class="brand toggleColour text-black dark:text-grey-lighter text-bold no-underline hover:no-underline font-bold text-2xl lg:text-4xl border-none" href="{{ home_url('/') }}" data-text="{{ get_bloginfo('name', 'display') }}">
         {{ get_bloginfo('name', 'display') }}
       </a>
     </div>
@@ -35,11 +35,11 @@
     {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}
   @endif
   <nav class='social-nav p-0 w-full flex justify-center py-5 relative justify-between'>
-    <a href="http://twitter.com/collinaberg" class='text-white mx-4 text-3xl' rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-    <a href="http://instagram.com/cabber" class='text-white mx-4 text-3xl' rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.linkedin.com/in/collinberg/" class='text-white mx-4 text-3xl' rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/collinberg" class='text-white mx-4 text-3xl' rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-    <a href="https://codepen.io/collinberg/" class='text-white mx-4 text-3xl' rel="noopener noreferrer"><i class="fab fa-codepen"></i></a>
+    <a href="http://twitter.com/collinaberg" class='text-white mx-4 text-3xl dark:text-grey-darker' rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+    <a href="http://instagram.com/cabber" class='text-white mx-4 text-3xl dark:text-grey-darker' rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/collinberg/" class='text-white mx-4 text-3xl dark:text-grey-darker' rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/collinberg" class='text-white mx-4 text-3xl dark:text-grey-darker' rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+    <a href="https://codepen.io/collinberg/" class='text-white mx-4 text-3xl dark:text-grey-darker' rel="noopener noreferrer"><i class="fab fa-codepen"></i></a>
   </nav>
 </div>
 </section>
